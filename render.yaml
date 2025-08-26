@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn items_dash_project.wsgi:application
+    envVars:
+      - key: DATABASE_URL
+        value: mysql://root:EFsdsQSYtYviQgYQzqRVrqqWGFxzJyfp@switchback.proxy.rlwy.net:49641/railway
+      - key: SECRET_KEY
+        value: EFsdsQSYtYviQgYQzqRVrqqWGFxzJyfp
